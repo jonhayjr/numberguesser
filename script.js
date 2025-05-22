@@ -17,17 +17,14 @@ const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
     //Throw alert if human guess is not between 0 and 9
     if (humanGuess < 0 || humanGuess > 9) {
         alert('Your guess must be between 0 and 9.');
+        return false;
     }
     //Find difference between targe and guess value and convert to absolute number
     const humanTargetDiff = getAbsoluteDistance(humanGuess, targetNumber);
     const computerTargetDiff = getAbsoluteDistance(computerGuess, targetNumber);
     
     //Return true if humanTargetDiff is less than or equal to computerTargetDiff and false otherwise
-    if (humanTargetDiff <= computerTargetDiff) {
-        return true;
-    } else {
-        return false;
-    }
+    return humanTargetDiff <= computerTargetDiff;
 }
 
 //Update correct score by 1 based on winner
