@@ -13,6 +13,11 @@ const getAbsoluteDistance = (num1, num2) => Math.abs(num1 - num2);
 
 //Function to check which guess - human or computer is closest to target
 const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
+    
+    //Throw alert if human guess is not between 0 and 9
+    if (humanGuess < 0 || humanGuess > 9) {
+        alert('Your guess must be between 0 and 9.');
+    }
     //Find difference between targe and guess value and convert to absolute number
     const humanTargetDiff = getAbsoluteDistance(humanGuess, targetNumber);
     const computerTargetDiff = getAbsoluteDistance(computerGuess, targetNumber);
