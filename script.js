@@ -10,11 +10,14 @@ const generateTarget = () => {
 
 const targetNumber = generateTarget();
 
+//Get absolute distance between two numbers
+const getAbsoluteDistance = (num1, num2) => Math.abs(num1 - num2);
+
 //Function to check which guess - human or computer is closest to target
 const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
     //Find difference between targe and guess value and convert to absolute number
-    const humanTargetDiff = Math.abs(humanGuess - targetNumber);
-    const computerTargetDiff = Math.abs(computerGuess - targetNumber);
+    const humanTargetDiff = getAbsoluteDistance(humanGuess, targetNumber);
+    const computerTargetDiff = getAbsoluteDistance(computerGuess, targetNumber);
     
     //Return true if humanTargetDiff is less than or equal to computerTargetDiff and false otherwise
     if (humanTargetDiff <= computerTargetDiff) {
