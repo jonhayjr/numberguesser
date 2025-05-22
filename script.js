@@ -10,7 +10,7 @@ const generateTarget = () => {
 
 const targetNumber = generateTarget();
 
-//
+//Function to check which guess - human or computer is closest to target
 const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
     //Find difference between targe and guess value and convert to absolute number
     const humanTargetDiff = Math.abs(humanGuess - targetNumber);
@@ -24,4 +24,11 @@ const compareGuesses = (humanGuess, computerGuess, targetNumber) => {
     }
 }
 
-console.log(compareGuesses(1, 7, targetNumber));
+//Update correct score by 1 based on winner
+const updateScore = winner => {
+    if (winner === 'human') {
+        humanScore++;
+    } else {
+        computerScore++;
+    }
+}
